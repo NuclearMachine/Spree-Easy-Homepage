@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Spree::HomeSection do
   describe 'associations' do
-    it { is_expected.to have_many(:home_section_products).dependent(:destroy) }
-    it { is_expected.to have_many(:products).through(:home_section_products)}
+    it { is_expected.to have_many(:home_section_variants).dependent(:destroy) }
+    it { is_expected.to have_many(:variants).through(:home_section_variants)}
   end
 
   describe 'after create' do
