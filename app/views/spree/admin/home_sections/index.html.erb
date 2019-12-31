@@ -1,0 +1,52 @@
+<% content_for :page_title do %>
+  <%= Spree.t(plural_resource_name(Spree::HomeSection)) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_home_section), new_object_url, { class: "btn-success", icon: 'add', id: 'admin_new_home_section' } %>
+<% end if can?(:create, Spree::HomeSection) %>
+
+<% if @home_sections.any? %>
+  <table class="table sortable" data-sortable-link="<%= update_positions_admin_home_sections_url %>">
+    <thead data-hook="home_sections_header">
+      <tr>
+        <th></th>
+        <th><%= I18n.t(:title, scope: 'activerecord.attributes.spree/home_section') %></th>
+        <th><%= Spree.t(plural_resource_name(Spree::Product)) %></th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @home_sections.each do |home_section| %>
+      <tr id="<%= spree_dom_id home_section %>"  data-hook="home_sections_row">
+        <td class="move-handle handle grabbable">
+          <% if can? :edit, home_section %>
+            <span class="icon icon-move"></span>
+          <% end %>
+        </td>
+        <td><%= home_section.title %></td>
+        <td>
+          <%= home_section.variants.count %>
+          <%= I18n.t('activerecord.models.spree/product', count: home_section.variants.count) %>
+          <%= '-' if home_section.variants.any? %>
+          <% home_section.variants.each_with_index do |variant, index| %>
+            <%= link_to "\"#{variant.name}\"", variant.product, target: '_blank' %>
+            <%= ', ' if index < home_section.variants.count - 1 %>
+          <% end %>
+        </td>
+        <td class="actions actions-2 text-right">
+          <%= link_to_edit(home_section, no_text: true) if can?(:edit, home_section) %>
+          <%= link_to_delete(home_section, no_text: true) if can?(:destroy, home_section) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="no-objects-found alert alert-info">
+    <%= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::HomeSection)) %>
+    <% if can?(:create, Spree::HomeSection) %>
+      - <%= link_to(Spree.t(:add_one), spree.new_admin_home_section_path(@home_section)) %>!
+    <% end %>
+  </div>
+<% end %>

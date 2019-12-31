@@ -4,5 +4,6 @@ module Spree
 
     has_many :home_section_variants, dependent: :destroy
     has_many :variants, through: :home_section_variants, source: :variant
+    has_many :products, through: :variants
   end
 end

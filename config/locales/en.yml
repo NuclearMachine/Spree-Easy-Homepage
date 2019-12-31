@@ -1,5 +1,15 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      spree/home_section:
+        one: Home Section
+        other: Home Sections
+    attributes:
+      spree/home_section:
+        title: Title
+  spree:
+    home_section_menu_name: Homepage
+    back_to_home_sections_list: Back To Sections List
+    edit_home_section: Edit Section
+    new_home_section: New Section
+
