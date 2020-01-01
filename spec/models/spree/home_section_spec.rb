@@ -11,7 +11,6 @@ describe Spree::HomeSection do
 
     it 'should act as a list' do
       expect(section).to respond_to(:set_list_position)
-      
     end
   end
 end

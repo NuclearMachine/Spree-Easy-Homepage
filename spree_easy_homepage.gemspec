@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mysql2'
   s.add_development_dependency 'pg'
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'puma'
   s.add_development_dependency 'rspec-rails', '~> 4.0.0.beta2'
   s.add_development_dependency 'sass-rails'
   s.add_development_dependency 'simplecov'
