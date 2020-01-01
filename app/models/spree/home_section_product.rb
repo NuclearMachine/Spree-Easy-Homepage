@@ -1,8 +1,8 @@
 module Spree
-  class HomeSectionVariant < Spree::Base
+  class HomeSectionProduct < Spree::Base
     acts_as_list
 
     belongs_to :home_section, class_name: 'Spree::HomeSection', required: true
-    belongs_to :variant, class_name: 'Spree::Variant', required: true
+    belongs_to :product, class_name: 'Spree::Product', required: true
   end
 end

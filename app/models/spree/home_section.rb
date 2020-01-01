@@ -2,8 +2,7 @@ module Spree
   class HomeSection < Spree::Base
     acts_as_list
 
-    has_many :home_section_variants, dependent: :destroy
-    has_many :variants, through: :home_section_variants, source: :variant
-    has_many :products, through: :variants
+    has_many :home_section_products, dependent: :destroy
+    has_many :products, through: :home_section_products, source: :product
   end
 end
