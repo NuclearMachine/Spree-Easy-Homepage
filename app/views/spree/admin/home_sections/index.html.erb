@@ -30,7 +30,7 @@
           <%= I18n.t('activerecord.models.spree/product', count: home_section.variants.count) %>
           <%= '-' if home_section.variants.any? %>
           <% home_section.variants.each_with_index do |variant, index| %>
-            <%= link_to "\"#{variant.name}\"", variant.product, target: '_blank' %>
+            <%= link_to "\"#{variant.name}\"", admin_product_path(variant.product), target: '_blank' %>
             <%= ', ' if index < home_section.variants.count - 1 %>
           <% end %>
         </td>
