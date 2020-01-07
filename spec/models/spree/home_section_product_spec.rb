@@ -9,7 +9,7 @@ describe Spree::HomeSectionProduct do
   describe 'after create' do
     let!(:section_product) { build(:section_product) }
 
-    it 'should act as a list' do
+    it 'acts as a list' do
       expect(section_product).to respond_to(:set_list_position)
     end
   end
