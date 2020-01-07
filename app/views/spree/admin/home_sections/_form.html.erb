@@ -1,0 +1,46 @@
+<%= render partial: 'spree/shared/error_messages', locals: { target: @home_section } %>
+
+<%= render partial: 'spree/admin/home_section_products/line_item', formats: :js %>
+<%= render partial: 'spree/admin/products/autosearch', formats: :js %>
+
+<div class="form-group">
+  <%= f.field_container :title, class: ['form-group'] do %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control title' %>
+    <%= f.error_message_on :title %>
+  <% end %>
+</div>
+
+<div class="form-group">
+  <table class="table">
+    <thead data-hook="home_sections_product_header">
+      <tr>
+        <th></th>
+        <th><%= Spree.t(:image) %></th>
+        <th><%= Spree.t(plural_resource_name(Spree::Product)) %></th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+    <%= content_tag :tbody,
+      id: "section-product-list",
+      data: {
+        home_sections: home_section_products
+    } do %>
+
+    <% end %>
+  </table>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <h1 class="card-title mb-0 h5"><%= Spree.t(:add_product) %></h1>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <%= label_tag :product_search, Spree.t(:name_or_sku) %>
+      <%= hidden_field_tag :product_search, "",
+        class: "product-autosearch d-block w-100"
+      %>
+    </div>
+  </div>
+</div>

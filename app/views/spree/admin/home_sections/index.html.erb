@@ -17,28 +17,28 @@
       </tr>
     </thead>
     <tbody>
-    <% @home_sections.each do |home_section| %>
-      <tr id="<%= spree_dom_id home_section %>"  data-hook="home_sections_row">
-        <td class="move-handle handle grabbable">
-          <% if can? :edit, home_section %>
-            <span class="icon icon-move"></span>
-          <% end %>
-        </td>
-        <td><%= home_section.title %></td>
-        <td>
-          <%= home_section.products.count %>
-          <%= I18n.t('activerecord.models.spree/product', count: home_section.products.count) %>
-          <%= '-' if home_section.products.any? %>
-          <% home_section.products.each_with_index do |product, index| %>
-            <%= link_to "\"#{product.try(:name)}\"", edit_admin_product_path(product), target: '_blank' %>
-            <%= ', ' if index < home_section.products.count - 1 %>
-          <% end %>
-        </td>
-        <td class="actions actions-2 text-right">
-          <%= link_to_edit(home_section, no_text: true) if can?(:edit, home_section) %>
-          <%= link_to_delete(home_section, no_text: true) if can?(:destroy, home_section) %>
-        </td>
-      </tr>
+      <% @home_sections.each do |home_section| %>
+        <tr id="<%= spree_dom_id home_section %>"  data-hook="home_sections_row">
+          <td class="move-handle handle grabbable">
+            <% if can? :edit, home_section %>
+              <span class="icon icon-move"></span>
+            <% end %>
+          </td>
+          <td><%= home_section.title %></td>
+          <td>
+            <%= home_section.products.count %>
+            <%= I18n.t('activerecord.models.spree/product', count: home_section.products.count) %>
+            <%= '-' if home_section.products.any? %>
+            <% home_section.products.each_with_index do |product, index| %>
+              <%= link_to "\"#{product.try(:name)}\"", edit_admin_product_path(product), target: '_blank' %>
+              <%= ', ' if index < home_section.products.count - 1 %>
+            <% end %>
+          </td>
+          <td class="actions actions-2 text-right">
+            <%= link_to_edit(home_section, no_text: true) if can?(:edit, home_section) %>
+            <%= link_to_delete(home_section, no_text: true) if can?(:destroy, home_section) %>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>

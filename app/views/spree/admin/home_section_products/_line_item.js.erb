@@ -1,0 +1,27 @@
+<script type='text/template' id='product-search-lineitem'>
+  <tr data-hook='home_sections_products_row'>
+    <input name="home_section[product_ids][]" type="hidden" value="{{product.id}}" />
+    <td class='move-handle handle grabbable'>
+      <span class='icon icon-move'></span>
+    </td>
+    <td>
+      {{#if product.image }}
+        <img src='{{product.image}}' class='thumbnail mb-0' />
+      {{ else }}
+        <img src='<%= image_path('noimage/mini.png') %>' class='thumbnail mb-0' />
+      {{/if}}
+    </td>
+    <td>
+      <strong></strong>
+        {{#if product.path }}
+          <a target='_blank' href='{{product.path}}'>{{product.name}}</a>
+        {{else}}
+          {{product.name}}
+        {{/if}}
+    </td>
+    <td class='actions actions-2 text-right'>
+      <%= link_to_delete('#', {no_text: true, url: '#', data: {}}) %>
+    </td>
+  </tr>
+</script>
+

@@ -1,0 +1,11 @@
+<% content_for :page_title do %>
+  <%= link_to Spree.t(plural_resource_name(Spree::HomeSection)), spree.admin_home_sections_url %> /
+  <%= @home_section.title %>
+<% end %>
+
+<%= form_for [:admin, @home_section] do |f| %>
+  <fieldset>
+    <%= render partial: 'form', locals: { f: f } %>
+    <%= render partial: 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
+<% end %>

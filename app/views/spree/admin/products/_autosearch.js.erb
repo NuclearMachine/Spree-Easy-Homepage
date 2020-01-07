@@ -1,0 +1,16 @@
+<script type='text/template' id='product-search-result'>
+  <div class='variant-autocomplete-item media align-items-center'>
+    <figure class='variant-image media-left mb-0 mr-3'>
+      {{#if product.image }}
+        <img src='{{product.image}}' class="thumbnail mb-0" />
+      {{ else }}
+        <img src='<%= image_path("noimage/mini.png") %>' class="thumbnail mb-0" />
+      {{/if}}
+    </figure>
+
+    <div class='variant-details media-body'>
+      <h5 class="variant-name media-heading h6 mb-0">{{product.name}}</h5>
+      <strong><%= Spree.t(:sku) %>:</strong> {{product.sku}}
+    </div>
+  </div>
+</script>
