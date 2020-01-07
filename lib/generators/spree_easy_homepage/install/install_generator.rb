@@ -5,6 +5,7 @@ module SpreeEasyHomepage
 
       def add_javascripts
         append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/spree_easy_homepage\n"
+        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/product_autosearch\n"
       end
 
       def add_stylesheets
