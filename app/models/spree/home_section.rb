@@ -18,6 +18,10 @@ module Spree
       product_ids.present?
     end
 
+    def products_by_position
+      products.order("spree_home_section_products.position ASC")
+    end
+
     protected
 
     def reset_section_products
