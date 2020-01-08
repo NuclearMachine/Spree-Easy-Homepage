@@ -44,4 +44,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'webdrivers', '~> 4.0.0'
   s.add_development_dependency 'shoulda-matchers'
+  s.add_development_dependency 'capybara-select-2'
 end
