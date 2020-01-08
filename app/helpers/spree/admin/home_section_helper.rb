@@ -11,17 +11,17 @@ module Spree
       end
 
       def parse_products(products:)
-        products.map { |product| product_parser(product: product).as_json }
+        products.map { |product| product_presenter(product: product).as_json }
       end
 
-      def product_parser(product:)
-        parser(product).parse
+      def product_presenter(product:)
+        presenter(product).parse
       end
 
       private
 
-      def parser(product)
-        Spree::ProductParser.new(product: product, main_app: main_app)
+      def presenter(product)
+        Spree::ProductPresenter.new(product: product, main_app: main_app)
       end
     end
   end

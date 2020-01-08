@@ -1,5 +1,5 @@
 module Spree
-  class ProductParser
+  class ProductPresenter
     include Rails.application.routes.url_helpers
     include Spree::Core::Engine.routes.url_helpers
 
@@ -17,9 +17,9 @@ module Spree
 
     protected
 
-    def product_image
-      return unless product.has_images?
-      main_app.url_for(image_link)
+    def image_link(image_url)
+      return if image_url.nil?
+      main_app.url_for(image_url)
     end
 
     def path
@@ -29,16 +29,9 @@ module Spree
     private
 
     def product_attributes
-      {
-        id: product.id,
-        name: product.name,
-        image: product_image,
-        path: path
-      }
-    end
-
-    def image_link
-      product.image_url(:mini)
+      parser_attributes = product.presenter_attributes
+      parser_attributes[:image] = image_link(parser_attributes[:image])
+      parser_attributes.merge({path: path})
     end
   end
 end
