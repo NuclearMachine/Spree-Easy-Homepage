@@ -71,11 +71,11 @@ describe Spree::HomeSection do
       end
     end
 
-    context 'when invoking has_product_ids?' do
+    context 'when invoking product_ids?' do
       it 'checks the presence of product_ids' do
-        expect(section.has_product_ids?).to eq(false)
+        expect(section.product_ids?).to eq(false)
         section.product_ids = [1, 2, 3]
-        expect(section.has_product_ids?).to eq(true)
+        expect(section.product_ids?).to eq(true)
       end
     end
   end

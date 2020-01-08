@@ -14,19 +14,20 @@ module Spree
       home_section_products.delete_all
     end
 
-    def has_product_ids?
+    def product_ids?
       product_ids.present?
     end
 
     def products_by_position
-      products.order("spree_home_section_products.position ASC")
+      products.order('spree_home_section_products.position ASC')
     end
 
     protected
 
     def reset_section_products
       delete_sections
-      return unless has_product_ids?
+      return unless product_ids?
+
       add_products(product_ids: product_ids)
     end
   end

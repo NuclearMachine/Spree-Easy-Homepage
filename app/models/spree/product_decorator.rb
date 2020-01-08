@@ -1,21 +1,28 @@
-module Spree::ProductDecorator
-  def self.prepended(base)
-    base.has_many :home_section_products, class_name: 'Spree::HomeSectionProduct'
-    base.has_many :home_sections, through: :home_section_products, class_name: 'Spree::HomeSection'
-  end
+module Spree
+  module ProductDecorator
+    def self.prepended(base)
+      base.has_many :home_section_products,
+                    class_name: 'Spree::HomeSectionProduct'
 
-  def image_url(style: :product)
-    image = images.first
-    return unless image.present?
-    image.url(style)
-  end
+      base.has_many :home_sections,
+                    through: :home_section_products,
+                    class_name: 'Spree::HomeSection'
+    end
 
-  def presenter_attributes
-    {
-      id: id,
-      name: name,
-      image: image_url(style: :mini)
-    }
+    def image_url(style: :product)
+      image = images.first
+      return if image.blank?
+
+      image.url(style)
+    end
+
+    def presenter_attributes
+      {
+        id: id,
+        name: name,
+        image: image_url(style: :mini)
+      }
+    end
   end
 end
 
