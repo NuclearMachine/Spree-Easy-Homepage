@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-  <%= Spree.t(plural_resource_name(Spree::HomeSection)) %>
+  <%= plural_resource_name(Spree::HomeSection) %>
 <% end %>
 
 <% content_for :page_actions do %>
@@ -12,7 +12,7 @@
       <tr>
         <th></th>
         <th><%= I18n.t(:title, scope: 'activerecord.attributes.spree/home_section') %></th>
-        <th><%= Spree.t(plural_resource_name(Spree::Product)) %></th>
+        <th><%= plural_resource_name(Spree::Product) %></th>
         <th class="actions"></th>
       </tr>
     </thead>
