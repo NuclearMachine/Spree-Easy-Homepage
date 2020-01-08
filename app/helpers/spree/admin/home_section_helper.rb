@@ -1,13 +1,10 @@
 module Spree
   module Admin
     module HomeSectionHelper
-      def home_section_products
-        return [] unless has_sections?
-        parse_products(products: @home_section.products_by_position)
-      end
+      def parse_home_sections(home_section)
+        return [] unless home_section.section_products?
 
-      def has_sections?
-        @home_section.respond_to?(:home_section_products)
+        parse_products(products: home_section.products_by_position)
       end
 
       def parse_products(products:)

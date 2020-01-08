@@ -24,7 +24,7 @@
     <%= content_tag :tbody,
       id: "section-product-list",
       data: {
-        home_sections: home_section_products
+        home_sections: parse_home_sections(@home_section)
     } do %>
 
     <% end %>

@@ -22,6 +22,10 @@ module Spree
       products.order('spree_home_section_products.position ASC')
     end
 
+    def section_products?
+      home_section_products.any?
+    end
+
     protected
 
     def reset_section_products

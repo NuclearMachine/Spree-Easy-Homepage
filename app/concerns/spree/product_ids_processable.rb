@@ -6,8 +6,8 @@ module Spree
       products << Spree::Product.find(product_id)
     end
 
-    def add_products(product_ids: product_ids)
-      clean_ids(product_ids).each { |id| add_product(product_id: id)}
+    def add_products(product_ids:)
+      clean_ids(product_ids).each { |id| add_product(product_id: id) }
     end
 
     protected

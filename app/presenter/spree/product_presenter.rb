@@ -19,6 +19,7 @@ module Spree
 
     def image_link(image_url)
       return if image_url.nil?
+
       main_app.url_for(image_url)
     end
 
@@ -31,7 +32,7 @@ module Spree
     def product_attributes
       parser_attributes = product.presenter_attributes
       parser_attributes[:image] = image_link(parser_attributes[:image])
-      parser_attributes.merge({path: path})
+      parser_attributes.merge(path: path)
     end
   end
 end
