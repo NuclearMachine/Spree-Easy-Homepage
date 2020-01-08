@@ -1,24 +1,27 @@
+require: rubocop-rails
+
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: 2.3
-  Include:
-    - '**/Gemfile'
-    - '**/Rakefile'
-    - '**/Appraisals'
+  TargetRubyVersion: 2.6.4
   Exclude:
-    - 'spec/dummy/**/*'
+    - 'spec/**/*'
     - 'lib/generators/**/*'
+    - 'bin/rails'
 
 Rails:
   Enabled: true
-
-Metrics/LineLength:
-  Max: 150
-
-# DISABLED
 
 Style/Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Rails/BelongsTo:
+  Exclude:
+    - 'app/models/spree/home_section_product.rb'
+
+Layout/LineLength:
+  Exclude:
+    - 'spec'
+    - 'app/overrides/spree/admin/shared/sub_menu/_configuration.rb'

@@ -12,6 +12,7 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: 'master'
 gem 'rails-controller-testing'
 
 gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 
 gemspec
