@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Spree::ProductPresenter do
-  let(:product_presenter) { described_class.new(product: product, main_app: main_app) }
+  let(:product_presenter) { described_class.new(product: product, main_app: spree) }
   let(:product) { create(:product) { |product| product.images.create(attributes_for(:image)) } }
 
   describe 'public interface' do
@@ -14,15 +14,9 @@ describe Spree::ProductPresenter do
         product_hash = product_presenter.parse
         expect(product_hash[:id]).to eq(product.id)
         expect(product_hash[:name]).to eq(product.name)
-        expect(product_hash[:path]).not_to be_empty
+        expect(product_hash[:path]).to eq(spree.edit_admin_product_path(product))
         expect(product_hash[:image]).not_to be_empty
       end
     end
   end
-end
-
-private
-
-def main_app
-  Rails.application.class.routes.url_helpers
 end
