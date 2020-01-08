@@ -25,8 +25,8 @@ module Spree
     protected
 
     def reset_section_products
-      return unless has_product_ids?
       delete_sections
+      return unless has_product_ids?
       add_products(product_ids: product_ids)
     end
   end
