@@ -7,9 +7,13 @@ AllCops:
     - 'spec/**/*'
     - 'lib/generators/**/*'
     - 'bin/rails'
+    - 'lib/spree_easy_homepage/engine.rb'
 
 Rails:
   Enabled: true
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
@@ -23,5 +27,5 @@ Rails/BelongsTo:
 
 Layout/LineLength:
   Exclude:
-    - 'spec'
     - 'app/overrides/spree/admin/shared/sub_menu/_configuration.rb'
+    - 'spree_easy_homepage.gemspec'
