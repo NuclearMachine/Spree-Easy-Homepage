@@ -16,6 +16,7 @@ require 'factory_bot'
 require 'selenium/webdriver'
 require 'rspec/rails'
 require 'shoulda/matchers'
+require 'capybara-select-2'
 
 include Warden::Test::Helpers
 Warden.test_mode!
