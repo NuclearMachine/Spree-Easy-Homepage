@@ -10,7 +10,7 @@ module Spree
 
     after_save :reset_section_products
 
-    attr_accessor :product_ids
+    attr_accessor :product_ids, :force_delete
 
     def delete_sections
       home_section_products.delete_all
@@ -18,6 +18,10 @@ module Spree
 
     def product_ids?
       product_ids.present?
+    end
+
+    def force_delete?
+      force_delete.present?
     end
 
     def products_by_position
@@ -31,7 +35,7 @@ module Spree
     protected
 
     def reset_section_products
-      delete_sections
+      delete_sections unless force_delete?
       return unless product_ids?
 
       add_products(product_ids: product_ids)

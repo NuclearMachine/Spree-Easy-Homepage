@@ -29,7 +29,7 @@
             <%= home_section.products.count %>
             <%= I18n.t('activerecord.models.spree/product', count: home_section.products.count) %>
             <%= '-' if home_section.products.any? %>
-            <% home_section.products.each_with_index do |product, index| %>
+            <% home_section.products_by_position.each_with_index do |product, index| %>
               <%= link_to "\"#{product.try(:name)}\"", edit_admin_product_path(product), target: '_blank' %>
               <%= ', ' if index < home_section.products.count - 1 %>
             <% end %>
