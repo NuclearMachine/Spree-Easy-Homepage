@@ -6,6 +6,8 @@ module Spree
     has_many :home_section_products, dependent: :destroy
     has_many :products, through: :home_section_products, source: :product
 
+    alias_attribute :sections, :home_section_products
+
     after_save :reset_section_products
 
     attr_accessor :product_ids

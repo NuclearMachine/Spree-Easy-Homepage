@@ -1,0 +1,16 @@
+<% product_partial ||= 'spree/products/product' %>
+<% product_locals ||= {} %>
+
+<% home_sections.each do |section| %>
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <h2> <%= section.title %> </h2>
+    </div>
+  </div>
+  <div class="row">
+    <% section.products_by_position.each do |product| %>
+      <% locals = {product: product, taxon: @taxon || nil}.merge(product_locals) %>
+      <%= render partial: product_partial, locals: locals %>
+    <% end %>
+  </div>
+<% end %>
