@@ -78,5 +78,30 @@ describe Spree::HomeSection do
         expect(section.product_ids?).to eq(true)
       end
     end
+
+    context 'when invoking force_delete?' do
+      it 'checks the presence of product_ids' do
+        expect(section.force_delete?).to eq(false)
+        section.force_delete = "true"
+        expect(section.force_delete?).to eq(true)
+      end
+    end
+
+    context 'when invoking section_products?' do
+      it 'checks the presence of section_products' do
+        expect(section.section_products?).to eq(false)
+        section.products << create(:product)
+        expect(section.section_products?).to eq(true)
+      end
+    end
+
+    context 'when invoking products_by_position' do
+      it 'checks the presence of products_by_position' do
+        section.products << create_list(:product, 5)
+        section.products_by_position.each_with_index do |product, index|
+          expect(product.home_section_products.first.position).to eq(index + 1)
+        end
+      end
+    end
   end
 end
