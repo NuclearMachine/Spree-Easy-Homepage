@@ -35,7 +35,7 @@ module Spree
     protected
 
     def reset_section_products
-      delete_sections unless force_delete?
+      delete_sections if force_delete?
       return unless product_ids?
 
       add_products(product_ids: product_ids)
