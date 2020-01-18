@@ -1,10 +1,10 @@
 # SpreeEasyHomepage
 
-This is a complete open source [Spree](https://github.com/spree/spree) extension for easily managing your website's homepage products. Particularly useful for programmers who have clients or users with limited technological literacy. The current default operation for managing your homepage is cubersome and time consuming for what is suppose to be a simple operation. Spree also does not include related frontend helpers which would require effort from the programmer to create and maintain.
+This is a complete open source [Spree](https://github.com/spree/spree) extension for easily managing your website's homepage products. Particularly useful for programmers who have clients or users with limited technological literacy. The current default operation for managing your homepage is cumbersome and time consuming for what is suppose to be a simple operation. Spree also does not include related frontend helpers which would require effort from the programmer to create and maintain.
 
 ![SpreeEasyHomepage Demonstration](https://media.giphy.com/media/ekedAYQFgW0iIW1hCg/giphy.gif)
 
-**SpreeEasyHomepage** provides a beautiful and intuitive interface for populating and categorizing products without comprimising ease of use. Developers would be delighted to know that setup is as simple as calling a single method from the view.
+**SpreeEasyHomepage** provides a beautiful and intuitive interface for populating and categorizing products without compromising ease of use. Developers would be delighted to know that setup is as simple as calling a single method from the view.
 
 
 Getting Started
@@ -54,7 +54,7 @@ Then from your view, add the helper method `fill_with_sections` eg:
 
 `fill_with_sections` defaults to use the product "tile" partial in `app/views/spree/products/_product.html.erb`. If none are found in your project folder, the call is delegated to the official "tile" partial used by Spree.
 
-The default product "tile" partial can be optionally overriden by passing `locals: {product_partial: '/path/to/tile_partial'}` in `fill_with_sections` arguments. EG:
+The default product "tile" partial can be optionally overridden by passing `locals: {product_partial: '/path/to/tile_partial'}` in `fill_with_sections` arguments. EG:
 
 ```ruby
 fill_with_sections(locals: {product_partial: 'spree/shared/product_tile'})
@@ -119,6 +119,6 @@ rails g spree_easy_homepage:install
 
 Contributing
 ----------------------
-This gem has been released only recently. Feedback is appreciated. I have no guidelines for pull-requests other than the basic description and reproduction steps (for bugs). Proper OOP must be followed for feature submissions.
+This gem has only been released recently. Feedback is appreciated. I have no guidelines for pull-requests other than the basic description and reproduction steps (for bugs). Proper OOP must be followed for feature submissions.
 
 Copyright (c) 2020 [Jibril Tapiador](https://www.jibril.ch/), released under the New BSD License.
