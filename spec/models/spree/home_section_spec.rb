@@ -80,7 +80,7 @@ describe Spree::HomeSection do
     end
 
     context 'when invoking force_delete?' do
-      it 'checks the presence of product_ids' do
+      it 'checks the presence of force_delete' do
         expect(section.force_delete?).to eq(false)
         section.force_delete = "true"
         expect(section.force_delete?).to eq(true)
