@@ -18,7 +18,10 @@ module Spree
       private
 
       def presenter(product)
-        Spree::ProductPresenter.new(product: product, main_app: main_app)
+        Spree::EasyHomepage::ProductPresenter.new(
+          product: product,
+          main_app: main_app
+        )
       end
     end
   end

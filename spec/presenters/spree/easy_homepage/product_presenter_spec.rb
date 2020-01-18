@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::ProductPresenter do
+describe Spree::EasyHomepage::ProductPresenter do
   let(:product_presenter) { described_class.new(product: product, main_app: spree) }
   let(:product) { create(:product) { |product| product.images.create(attributes_for(:image)) } }
 
