@@ -7,13 +7,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_easy_homepage'
   s.version     = SpreeEasyHomepage.version
-  s.summary     = 'Spree Extension for easily managing your Homepage products!'
-  s.description = 'SpreeEasyHomepage provides a beautiful and intuitive interface for populating and categorizing products without compromising ease of use'
+  s.summary     = 'Spree Extension for easily managing your Homepage products.'
+  s.description = 'SpreeEasyHomepage provides a beautiful and intuitive interface for populating and categorizing products without compromising ease of use.'
   s.required_ruby_version = '>= 2.3.3'
 
   s.author    = 'Jibril Tapiador'
   s.email     = 'tapiador@jibril.ch'
-  s.homepage  = 'https://github.com/NuclearMachine/spree_easy_homepage'
+  s.homepage  = 'https://github.com/NuclearMachine/Spree-Easy-Homepage'
   s.license = 'BSD-3-Clause'
 
   s.files = `git ls-files`.split("\n").reject { |f| f.match(/^spec/) && !f.match(%r{^spec/fixtures}) }
