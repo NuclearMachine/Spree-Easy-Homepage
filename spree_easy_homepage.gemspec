@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_easy_homepage'
   s.version     = SpreeEasyHomepage.version
   s.summary     = 'Spree Extension for easily managing your Homepage products.'
-  s.description = 'SpreeEasyHomepage provides a beautiful and intuitive interface for populating and categorizing products without compromising ease of use.'
+  s.description = 'Spree Easy Homepage provides a beautiful and intuitive interface for populating and categorizing products without compromising ease of use.'
   s.required_ruby_version = '>= 2.3.3'
 
   s.author    = 'Jibril Tapiador'

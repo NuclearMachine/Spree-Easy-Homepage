@@ -1,10 +1,10 @@
-# SpreeEasyHomepage
+# Spree Easy Homepage
 
-This is a complete open source [Spree](https://github.com/spree/spree) extension for easily managing your website's homepage products. Particularly useful for programmers who have clients or users with limited technological literacy. The current default operation for managing your homepage is cumbersome and time consuming for what is suppose to be a simple operation. Spree also does not include related frontend helpers which would require effort from the programmer to create and maintain.
+This is a complete open source [Spree](https://github.com/spree/spree) extension for easily managing your homepage products. The current default operation for managing your homepage is cumbersome and time consuming for what is suppose to be a simple operation. Spree also does not include related frontend helpers which would require effort from the programmer to create and maintain.
 
-![SpreeEasyHomepage Demonstration](https://media.giphy.com/media/ekedAYQFgW0iIW1hCg/giphy.gif)
+![Spree Easy Homepage Demonstration](https://media.giphy.com/media/ekedAYQFgW0iIW1hCg/giphy.gif)
 
-**SpreeEasyHomepage** provides a beautiful and intuitive interface for populating and categorizing products without compromising ease of use. Developers would be delighted to know that setup is as simple as calling a single method from the view.
+**Spree Easy Homepage** provides a beautiful and intuitive interface for populating and categorizing products without compromising ease of use. Developers would be delighted to know that setup is as simple as calling a single method from the view.
 
 
 Getting Started
@@ -28,8 +28,6 @@ bundle install
 rails g spree_easy_homepage:install
 ```
 
-Admins can manage their Homepage by navigating to the configurations tab from the sidebar.
-
 Frontend Setup
 ----------------------
 
@@ -49,6 +47,8 @@ Then from your view, add the helper method `fill_with_sections` eg:
   <%= fill_with_sections %>
 </div>
 ```
+
+Admins can manage their Homepage by navigating to the configurations tab from the Admin sidebar.
 
 #### Thats it!
 
