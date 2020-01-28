@@ -25,7 +25,7 @@ module Spree
     end
 
     def products_by_position
-      products.order('spree_home_section_products.position ASC')
+      products.order(sections_asc_query)
     end
 
     def section_products?
@@ -39,6 +39,12 @@ module Spree
       return unless product_ids?
 
       add_products(product_ids: product_ids)
+    end
+
+    private
+
+    def sections_asc_query
+      'spree_home_section_products.position ASC'
     end
   end
 end
