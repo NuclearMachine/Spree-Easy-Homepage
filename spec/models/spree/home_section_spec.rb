@@ -21,9 +21,9 @@ describe Spree::HomeSection do
   end
 
   describe 'after save' do
-    context 'when reset_section_products is invoked' do
-      let(:section) { build(:section) }
+    let(:section) { build(:section) }
 
+    context 'if product_ids is present' do
       let(:product1) { create(:product) }
       let(:product2) { create(:product) }
       let(:product3) { create(:product) }
@@ -38,7 +38,9 @@ describe Spree::HomeSection do
         expect(section.home_section_products.second.product).to eq(product2)
         expect(section.home_section_products.third.product).to eq(product3)
         expect(section.home_section_products.fourth.product).to eq(product1)
+      end
 
+      it 'sets section product position' do
         expect(section.home_section_products.first.position).to eq(1)
         expect(section.home_section_products.second.position).to eq(2)
         expect(section.home_section_products.third.position).to eq(3)

@@ -8,7 +8,7 @@ module Spree
 
     alias_attribute :sections, :home_section_products
 
-    after_save :reset_section_products
+    after_save :force_delete_sections, :add_products_by_id
 
     attr_accessor :product_ids, :force_delete
 
@@ -34,8 +34,13 @@ module Spree
 
     protected
 
-    def reset_section_products
-      delete_sections if force_delete?
+    def force_delete_sections
+      return unless force_delete?
+
+      delete_sections
+    end
+
+    def add_products_by_id
       return unless product_ids?
 
       add_products(product_ids: product_ids)
